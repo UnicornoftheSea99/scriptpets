@@ -15,6 +15,7 @@ const Pet = sequelize.define("pet", {
   hunger: {type: Sequelize.INTEGER},
   health: {type: Sequelize.INTEGER},
   personality: {type:Sequelize.STRING},
+  species: {type:Sequelize.STRING},
   myDate: {type: Sequelize.DATE,
             defaultValue: Sequelize.NOW },
   createdAt:Sequelize.DATE
