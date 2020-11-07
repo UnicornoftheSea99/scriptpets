@@ -1,0 +1,21 @@
+.container-login {
+	width: 500px; 
+	border-radius: 2rem; 
+	padding: 3rem;
+}
+
+.btn {
+	width: 100%;
+}
+
+form {
+	margin: 1.5rem 0;
+}
+
+input {
+	border: 1px solid #ccc;
+	border-radius: 0.8rem;
+	margin: 1.1rem 0;
+	padding: 1.2rem;
+	width: 100%;
+}

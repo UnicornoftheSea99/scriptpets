@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Open+Sans&display=swap');
+   
+* {
+	font-family: 'Open Sans', sans-serif;
+} 
+
+/* NAVBAR */
+.navbar {
+	color: #fff;
+	margin: 1rem 3rem;
+}
+.navbar-brand {
+	font-family: 'Caveat Brush', cursive;
+	font-size: 4rem;
+	margin: 0 3rem 0 0;
+}  
+.navbar-brand:hover {
+}
+.navbar-nav {
+}
+.nav-link {
+	margin: 0 1.1rem;
+}
+.nav-link:hover {
+}
+
+/* BODY */
+.card {
+	border: none;
+}
