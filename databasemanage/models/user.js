@@ -17,6 +17,7 @@ const User = sequelize.define("user", {
   //MAKE SURE TO HASH PASSWORD: ANANDA
   password: {type: Sequelize.STRING},
   createdAt: Sequelize.DATE,
-  updatedAt: Sequelize.DATE
+  updatedAt: Sequelize.DATE,
+  money:{type:Sequelize.INTEGER}
 })
 module.experts = User;
