@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize")
-const sequelize = require("../databaseconnection.js")
+const sequelize = require("./databaseconnection.js")
 //https://www.geeksforgeeks.org/node-js-mysql-create-table-using-sequelize/?ref=rp
 //https://dev.to/darshanbib/user-management-for-node-js-mysql-using-sequelize-and-passportjs-44kj
 
