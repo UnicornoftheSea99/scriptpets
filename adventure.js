@@ -39,6 +39,11 @@ function selectOption(option) {
   showTextNode(nextTextNodeId)
 }
 
+function randNumber(){
+    result = Math.floor(Math.random() * 3)
+    return result; 
+}
+
 // class Item {
 //     constructor(nam, stat) {
 //         this.name = nam;
@@ -60,76 +65,88 @@ const textNodes = [
     text: 'Your Adventure Awaits! Choose Your Path',
     options: [
       {
-        text: 'Take the goo',
-        setState: { blueGoo: true },
+        text: 'Go into the forest',
+        setState: { brave: true },
         nextText: 2
       },
       {
-        text: 'Leave the goo',
-        nextText: 2
+        text: 'Go towards the ocean',
+        setState: { brave: true },
+        nextText: 3
+      },
+      {
+        text: 'Go home.',
+        nextText: 4
       }
     ]
   },
   {
     id: 2,
-    text: 'You venture forth in search of answers to where you are when you come across a merchant.',
+    text: 'You venture forth into the forest where you come across a troll.',
     options: [
       {
-        text: 'Trade the goo for a sword',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, sword: true },
-        nextText: 3
+        text: 'Fight the troll',
+        requiredState:(currentState) => currentState.brave, 
+        //requiredState: (currentState) => currentState.blueGoo,
+        setState: { brave: true},
+        nextText: (function(num){
+            if(num ==0){return 5;} 
+            else if (num==1){return 6;} 
+            else if (num==2){return 7;} randNumber()})
       },
       {
-        text: 'Trade the goo for a shield',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, shield: true },
-        nextText: 3
+        text: 'Try to reason with the troll',
+        //requiredState: (currentState) => currentState.blueGoo,
+        //setState: { blueGoo: false, shield: true },
+        nextText: (function(num){
+            if(num ==0){return 5;} 
+            else if (num==1){return 8;} 
+            else if (num==2){return 9;} randNumber()})
       },
       {
-        text: 'Ignore the merchant',
-        nextText: 3
+        text: 'Run away back home',
+        nextText: 4
       }
     ]
   },
-//   {
-//     id: 3,
-//     text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
-//     options: [
-//       {
-//         text: 'Explore the castle',
-//         nextText: 4
-//       },
-//       {
-//         text: 'Find a room to sleep at in the town',
-//         nextText: 5
-//       },
-//       {
-//         text: 'Find some hay in a stable to sleep in',
-//         nextText: 6
-//       }
-//     ]
-//   },
-//   {
-//     id: 4,
-//     text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
-//     options: [
-//       {
-//         text: 'Restart',
-//         nextText: -1
-//       }
-//     ]
-//   },
-//   {
-//     id: 5,
-//     text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
-//     options: [
-//       {
-//         text: 'Restart',
-//         nextText: -1
-//       }
-//     ]
-//   },
+  {
+    id: 3,
+    text: 'You venture closer to the ocean. In front of you are two paths. Do you:',
+    options: [
+      {
+        text: 'Walk closer towards the ocean.',
+        nextText: 4
+      },
+      {
+        text: 'Walk towards the town',
+        nextText: 5
+      },
+      {
+        text: 'Turn around and go home',
+        nextText: 4
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: 'You have run home scared and so will go home penniless.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: 'You have died honorably in battle. You have earned +10 coins.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
 //   {
 //     id: 6,
 //     text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
