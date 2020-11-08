@@ -5,17 +5,13 @@
 	<!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	
 	<!-- bootstrap css -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"/>
 	<!-- my css -->
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/adventure.css">
+	<link rel="stylesheet" href="css/login.css">
 	
-	<script src="https://kit.fontawesome.com/4cb3e5d9fa.js" crossorigin="anonymous"></script>
-	
-    <script defer src="../adventure.js"></script>
 </head>
 <body>
 	
@@ -29,69 +25,27 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<div class="navbar-nav mr-auto">
 				<a class="nav-link" href="profile.html">Profile</a>
-				<a class="nav-link active" href="adventure.html">Adventure</a>
+				<a class="nav-link" href="adventure.html">Adventure</a>
 			</div>
 			<div class="navbar-nav ml-auto">
 				<a class="nav-link" href="login.html">Log In</a>
-				<a class="nav-link" href="register.html">Register</a>
+				<a class="nav-link active" href="register.html">Register</a>
 			</div>
 		</div>
 	</nav>
 	
 	<!-- content -->
-	<div class="container">
-		<div class="row">
-			<div class="col-3">
-				<div class='card shadow'>
-					<img class='card-img-top' src='../imgs/turtleduck.jpg' alt='Picture of turtleduck'>
-					<div class='card-body'>
-						<h5 class='card-title'>Zuko</h5>
-						<div class='card-text'>
-							<table class="table">
-								<tr>
-									<th scope="row"><i class="fas fa-heartbeat fa-sm"></i> Health</th>
-									<td>100/100</td>
-								</tr>
-								<tr>
-									<th scope="row"><i class="fas fas fa-coins fa-sm"></i> Money</th>
-									<td>1000</td>
-								</tr>
-								<tr>
-									<th scope="row"><i class="fas fa-laugh-beam fa-sm"></i> Mood</th>
-									<td>Happy</td>
-								</tr>
-								<tr>
-									<th scope="row"><i class="fas fa-cookie-bite fa-sm"></i> Hunger</th>
-									<td>Hungry</td>
-								</tr>
-								<!--<tr>
-									<th scope="row">Personality</th>
-									<td>Cranky</td>
-								</tr>
-								<tr>
-									<th scope="row">Species</th>
-									<td>Turtleduck</td>
-								</tr>-->
-							</table>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-9">
-			<h2>Adventure</h2>
-			<div class="container">
-				<div id="text">Text</div>
-				<div id="option-buttons" class="btn-container">
-					<button class="btn btn-dark">Option 1</button>
-					<button class="btn btn-dark">Option 2</button>
-					<button class="btn btn-dark">Option 3</button>
-					<button class="btn btn-dark">Option 4</button>
-				</div>
-			</div>
+	<div class="container container-login">
+		<div class="row justify-content-center login">
+			<h2>Make an account</h2>
+			<form>
+				<input id="username" name="username" type="text" placeholder="Username" required>
+				<input id="password" name="password" type="password" placeholder="Password" required>
+				<input id="confPassword" name="confPassword" type="password" placeholder="Confirm password" required>
+			</form>
+			<button type="button" class="btn btn-dark">Sign up</button>
 		</div>
 	</div>
-	
 		
 	<!-- scripts -->
 	<div class="scripts">

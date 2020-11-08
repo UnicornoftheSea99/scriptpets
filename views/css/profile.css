@@ -1,3 +1,21 @@
-.card {
-	width: 500px;
+.container-stats {
+	padding: 2rem;
+}
+img {
+	border-radius: 50%;
+}
+.row {
+	padding: 1rem;
+}
+.col-2 {
+	text-align: center;
+}
+.btn-interaction {
+	width:100%;
+	padding: 1.5rem;
+}
+h6 {
+	padding: .2rem 0;
+	border-bottom: .1rem solid #f1f1f1;
+	font-weight: bold;
 }

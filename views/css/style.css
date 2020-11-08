@@ -4,27 +4,57 @@
 	font-family: 'Open Sans', sans-serif;
 } 
 
+body {
+
+}
+
 /* NAVBAR */
 .navbar {
-	color: #fff;
-	margin: 1rem 3rem;
+	padding: 1rem 3rem;
+	margin: 0 0 2rem 0;
+	background-color: rgb(63,73,116);
 }
 .navbar-brand {
 	font-family: 'Caveat Brush', cursive;
-	font-size: 4rem;
+	font-size: 2rem;
 	margin: 0 3rem 0 0;
+	color: rgb(255,255,255,1);
 }  
 .navbar-brand:hover {
+	color: rgb(255,255,255,0.8);
 }
 .navbar-nav {
 }
 .nav-link {
+	color: white;
 	margin: 0 1.1rem;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 .nav-link:hover {
+	color: white;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.custom-toggler.navbar-toggler {
+	background-color: rgb(0,0,0,0);
+	border-color: rgb(0,0,0);
+} 
+
 /* BODY */
+.container {
+	padding: 2rem;
+}
 .card {
 	border: none;
+	border-radius: 1.2rem;
+}
+.card-img-top {
+	border-radius: 1.2rem 1.2rem 0 0;
+}
+h2 {
+	
 }
