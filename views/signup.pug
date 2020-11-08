@@ -1,0 +1,12 @@
+doctype html
+head
+form#signup(name='signup' method='post' action='/signup')
+  label(for='email') Email Address
+  input.text(name='email' type='email')
+  label(for='firstname') Firstname
+  input(name='firstname' type='text')
+  label(for='lastname') Lastname
+  input(name='lastname' type='text')
+  label(for='password') Password
+  input(name='password' type='password')
+  input.btn(type='submit' value='Sign Up')

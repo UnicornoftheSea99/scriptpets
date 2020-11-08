@@ -8,7 +8,7 @@ var sequelize = new Sequelize('scriptpets', 'maxroach', 'PasswordMans',{
   logging: console.log,
   dialectOptions: {
     ssl: {
-               cert: fs.readFileSync('./certs/script-pets-ca.crt')
+               cert: fs.readFileSync('./databasemanage/certs/script-pets-ca.crt')
                    .toString()
            }
       }

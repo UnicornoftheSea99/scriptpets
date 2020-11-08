@@ -1,19 +1,33 @@
 const express = require('express')
 var app = express()
 const path = require('path');
-const petmodel = require('./databasemanage/models/pet.js')
-const usermodel = require('./databasemanage/models/user.js')
-const bodyparser = require('bodyparser')
+var session = require('express-session');
+const petmodel = require('./databasemanage/pet.js')
+const usermodel = require('./databasemanage/user.js')
+const bodyParser = require('body-parser')
+const passport = require('passport')
 
-app.set('views', 'views', path.join(__dirname, 'public'));
+//secret
+app.use(session({ secret: 'Encryption Key 39573957afjkdlasfj',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+//body parser.
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
+//view engine: pug
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug')
 
 
-
+//routes :prayer
 app.get('/', function(req, res){
-  res.send("hello world")
+  res.render('test.pug')
 })
 
+var authRoute = require('./routes/auth.js')(app);
 
 app.listen(5000, function(err){
     if (!err){
@@ -21,8 +35,4 @@ app.listen(5000, function(err){
     }else{
       console.log(err);
     }
-})
-
-app.listen(5000, function () {
-      console.log("Listening on port " + this.address().port)
 })
