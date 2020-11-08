@@ -20,17 +20,19 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       a.nav-link(href='/profile') Profile
       a.nav-link(href='/adventure') Adventure
     .navbar-nav.ml-auto
-      a.nav-link(href='/login') Log In
-      a.nav-link.active(href='/register') Register
+      a.nav-link.active(href='/login') Log In
+      a.nav-link(href='/register') Register
 // content
 .container.container-login
   .row.justify-content-center.login
-    h2 Make an account
-    form
-      input#username(name='name' type='text' placeholder='Name' required='')
+    h2 Register
+    form(action='/register', method='POST')
+      | title:
+      input#username(name='username' type='text' placeholder='Username' required='')
+      | password:
       input#password(name='password' type='password' placeholder='Password' required='')
-      input#confPassword(name='confPassword' type='password' placeholder='Confirm password' required='')
-    button.btn.btn-dark(type='button') Sign up
+      | Submit:
+      input(type='submit', value='Submit')
 // scripts
 .scripts
   script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')

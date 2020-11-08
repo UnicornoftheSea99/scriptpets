@@ -26,9 +26,6 @@ app.set('view engine', 'pug')
 app.get('/', function(req, res){
   res.render('login')
 })
-app.get('/profile', function(req, res){
-  res.render('profile')
-})
 app.get('/adventure', function(req, res){
   res.render('adventure')
 })

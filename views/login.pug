@@ -26,10 +26,13 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
 .container.container-login
   .row.justify-content-center.login
     h2 Log In
-    form
+    form(action='/profile', method='POST')
+      | title:
       input#username(name='username' type='text' placeholder='Username' required='')
+      | password:
       input#password(name='password' type='password' placeholder='Password' required='')
-    button.btn.btn-dark(type='button') Log in
+      | Submit:
+      input(type='submit', value='Submit')
 // scripts
 .scripts
   script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')

@@ -2,10 +2,9 @@ var bCrypt = require('bcrypt-nodejs');
 var User = require('./../../databasemanage/user.js')
 var passport = require('passport')
 module.exports = function(passport, user) {
-
     var User = user;
     var LocalStrategy = require('passport-local').Strategy;
-    passport.use('local-signup', new LocalStrategy(
+    passport.use('local-register', new LocalStrategy(
         {
             usernameField: 'email',
             passwordField: 'password',
@@ -13,7 +12,6 @@ module.exports = function(passport, user) {
         },
         function(req, email, password, done) {
           var generateHash = function(password) {
-
               return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 
           };
@@ -35,6 +33,7 @@ module.exports = function(passport, user) {
                 money:20
               };
               User.create(data).then(function(newUser, created){
+                console.log("new user event.")
                 if (!newUser){
                   return done(null, false)
                 }
