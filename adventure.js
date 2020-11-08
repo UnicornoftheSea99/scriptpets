@@ -80,9 +80,10 @@ const textNodes = [
         requiredState:(currentState) => currentState.brave, 
         setState: { brave: true},
         nextText: (function(num){
-            if(num ==0){return 5;} 
-            else if (num==1){return 6;} 
-            else if (num==2){return 7;} randNumber()})
+         // console.log(num)
+            if(num ==0){return 5} 
+            else if (num==1){return 6} 
+            else if (num==2){return 7} randNumber()})
       },
       {
         text: 'Try to reason with the troll',
