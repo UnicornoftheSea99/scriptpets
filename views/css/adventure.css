@@ -32,3 +32,9 @@ p {
 .fas {
 	padding: 0 1rem 0 0;
 }
+
+@media (max-width: 991.98px) { 
+	.card {
+		display: block;
+	}
+}

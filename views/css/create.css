@@ -1,0 +1,60 @@
+img {
+	border-radius: 1.2rem;
+}
+
+h5 {
+	font-weight: bold;
+	margin-top: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+p {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	padding: 1.2rem 0;
+}
+
+.container {
+	width: 700px;
+}
+.container-choices {
+	margin: 2rem 0;
+}
+.col-4 {
+	opacity: 0.7;
+	transition: opacity 0.4s;
+}
+.col-4:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.btn-choices {
+   background-color:  rgb(41, 43, 44, 0);
+   border-color: rgb(41, 43, 44, 0.9);
+   margin: 0.5rem 0;
+   width: 100%;
+   padding: 1.5rem 2rem;
+   color: rgb(41, 43, 44, 0.9);
+   text-transform: uppercase;
+}
+
+.btn-choices:hover {
+	color: white;
+    background-color: rgb(41, 43, 44, 0.9);
+}
+
+input {
+	border: 1px solid #ccc;
+	border-radius: 0.2rem;
+	margin: 1.1rem 0;
+	padding: 1.2rem;
+	width: 100%;
+}
+
+.btn-dark {
+	width: 100%;
+    padding: 1.5rem 2rem;
+	margin: 1.5rem 0;
+}

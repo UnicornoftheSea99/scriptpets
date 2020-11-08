@@ -20,3 +20,9 @@ input {
 	padding: 1.2rem;
 	width: 100%;
 }
+
+@media (max-width: 575.98px) {
+  .container-login {
+    width: 100%;
+  }
+}
