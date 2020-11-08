@@ -7,7 +7,7 @@ const Pet = sequelize.define("pet", {
   pet_id:{
     type:Sequelize.INTEGER,
     autoIncrement:true,
-    allowNull:false
+    allowNull:false,
     primaryKey:true
   },
   name: {type: Sequelize.STRING},
@@ -20,4 +20,4 @@ const Pet = sequelize.define("pet", {
             defaultValue: Sequelize.NOW },
   createdAt:Sequelize.DATE
 })
-module.experts = Pet;
+module.exports = Pet;

@@ -1,20 +1,16 @@
 var Sequelize = require('sequelize-cockroachdb');
 var fs = require('fs');
 
-
-var sequelize = new Sequelize('scriptpets', 'maxroach', ''{
+var sequelize = new Sequelize('scriptpets', 'maxroach', 'PasswordMans',{
+  host:'script-pets-649.gcp-us-west2.cockroachlabs.cloud',
   dialect: 'postgres',
   port: 26257,
-  logging: false,
+  logging: console.log,
   dialectOptions: {
     ssl: {
-               ca: fs.readFileSync('certs/ca.crt')
-                   .toString(),
-               key: fs.readFileSync('certs/client.maxroach.key')
-                   .toString(),
-               cert: fs.readFileSync('certs/client.maxroach.crt')
+               cert: fs.readFileSync('./certs/script-pets-ca.crt')
                    .toString()
-           }//be very careful with this part. do not share CRTS. it will make our database insecure :(
+           }
       }
 });
 

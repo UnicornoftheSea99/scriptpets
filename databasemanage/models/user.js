@@ -7,7 +7,7 @@ const User = sequelize.define("user", {
   user_id:{
     type:Sequelize.INTEGER,
     autoIncrement:true,
-    allowNull:false
+    allowNull:false,
     primaryKey:true
   },
   name: {type: Sequelize.STRING},
@@ -20,4 +20,4 @@ const User = sequelize.define("user", {
   updatedAt: Sequelize.DATE,
   money:{type:Sequelize.INTEGER}
 })
-module.experts = User;
+module.exports = User;
