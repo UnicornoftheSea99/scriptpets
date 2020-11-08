@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/UnicornoftheSea99/scriptpets#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cores": "^0.8.5",

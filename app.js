@@ -18,16 +18,20 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 //view engine: pug
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug')
 
 
 //routes :prayer
 app.get('/', function(req, res){
-  res.render('test.pug')
+  res.render('login')
+})
+app.get('/profile', function(req, res){
+  res.render('profile')
 })
 
-var authRoute = require('./routes/auth.js')(app);
+var authRoute = require('./routes/auth.js')(app, passport);
+require('./config/passport/passport.js')(passport, usermodel);
 
 app.listen(5000, function(err){
     if (!err){

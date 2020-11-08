@@ -1,7 +1,11 @@
 var exports = module.exports = {}
-pug = require('pug')
-exports.signup = function(req, res) {
+exports.register = function(req, res) {
 
-    res.render(pug.renderFile('signup'));
+    res.render('register.pug');
+
+}
+exports.login = function(req, res) {
+
+    res.render('login');
 
 }
