@@ -1,7 +1,7 @@
 var exports = module.exports = {}
 exports.register = function(req, res) {
 
-    res.render('register.pug');
+    res.render('register');
 
 }
 exports.login = function(req, res) {

@@ -29,6 +29,9 @@ app.get('/', function(req, res){
 app.get('/profile', function(req, res){
   res.render('profile')
 })
+app.get('/adventure', function(req, res){
+  res.render('adventure')
+})
 
 var authRoute = require('./routes/auth.js')(app, passport);
 require('./config/passport/passport.js')(passport, usermodel);
