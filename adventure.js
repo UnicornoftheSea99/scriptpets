@@ -9,6 +9,7 @@ function startAdventure() {
 }
 
 function showTextNode(textNodeIndex) {
+  console.log(textNodeIndex)
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
   while (optionButtonsElement.firstChild) {
@@ -24,6 +25,9 @@ function showTextNode(textNodeIndex) {
       optionButtonsElement.appendChild(button)
     }
   })
+  if(textNode.bank){
+    earningMoney(textNode.bank)
+  }
 }
 
 function showOption(option) {
@@ -36,7 +40,12 @@ function selectOption(option) {
     return startAdventure()
   }
   state = Object.assign(state, option.setState)
+  if(typeof nextTextNodeId==='number'){
   showTextNode(nextTextNodeId)
+  }else{
+    console.log(nextTextNodeId)
+    showTextNode(nextTextNodeId(randNumber()))
+  }
 }
 
 function randNumber(){
@@ -141,7 +150,7 @@ const textNodes = [
   {
     id: 5,
     text: 'You have died honorably in battle. You have earned 10 coins.',
-    bank: earningMoney(10),
+    bank: 10,
     options: [
         {
             text: 'End Game',
@@ -156,7 +165,7 @@ const textNodes = [
   {
     id: 6,
     text: 'You pull out a sword and charge at the troll. You succeed in slaying it. You are rewarded 10 coins.',
-    bank: earningMoney(10),
+    bank: 10,
     options: [
       {
         text: 'Accept the coins and continue on your way.',
@@ -173,7 +182,7 @@ const textNodes = [
   {
     id: 7,
     text: 'You manage to distract the troll, but are injured in the process. You are rewarded 5 coins.',
-    bank: earningMoney(5),
+    bank: 5,
     options: [
       {
         text: 'Accept the coins and continue on your way.',
@@ -190,7 +199,7 @@ const textNodes = [
   {
     id: 8,
     text: 'You succeed in reasoning with the troll. He shakes your hand and gives you 15 coins for a scintillating conversation.',
-    bank: earningMoney(15),
+    bank: 15,
     options: [
         {
             text: 'Accept the coins and continue on your way.',
@@ -207,7 +216,7 @@ const textNodes = [
   {
     id: 9,
     text: 'The troll does not agree with your company and decided to eat you. You die instantly but earn 5 coins.',
-    bank: earningMoney(15),
+    bank: 15,
     options: [
         {
             text: 'End Game',
@@ -296,7 +305,7 @@ const textNodes = [
   {
     id: 14,
     text: 'You defeat the Unagi and the locals, who had been terrorized by the Unagi for years, thank you with 20 coins.',
-    bank: earningMoney(20),
+    bank: 20,
     options: [
         {
             text: 'Accept the coins and continue on your way.',
@@ -313,7 +322,7 @@ const textNodes = [
   {
     id: 15,
     text: 'The box contains lost Aztec gold. You get 40 coins. Your adventure has come to a close',
-    bank: earningMoney(20),
+    bank: 20,
     options: [
         {
             text: 'Finish Adventure.',
@@ -334,11 +343,11 @@ const textNodes = [
   {
     id: 17,
     text: 'Congratulations on completing all the challenges in your path. Here are 10 bonus coins.',
-    bank: earningMoney(10),
+    bank: 10,
   },
   {
     id: 18,
-    text: 'Your adventure ends here.',
+    text: 'Your adventure ends here. You have '+coins+' coins',
   }
 ]
 
