@@ -1,6 +1,6 @@
 const user = require('./models/user.js')
 
-function checkDuplicateUsernameOrEmail = (req, res, next) => {
+checkDuplicateUsernameOrEmail = (req, res, next) => {
   // Username
   User.findOne({
     where: {

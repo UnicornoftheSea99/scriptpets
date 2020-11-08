@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config.js");
-const db = require("../models");
-const User = db.user;
+const user = require('../models/user.js')
 //https://bezkoder.com/node-js-jwt-authentication-mysql/
 function verifyToken = (req, res, next) => {
   let token = req.headers["x-access-token"];
@@ -24,4 +23,5 @@ function verifyToken = (req, res, next) => {
 };
 
 
-module.exports =
+
+module.exports = verifyToken;
