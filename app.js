@@ -1,6 +1,11 @@
-var express = require('express')
+const express = require('express')
 var app = express()
-const syncTables = require('./databasemanage/createtables.js')
+const path = require('path');
+const petmodel = require('./databasemanage/models/pet.js')
+const usermodel = require('./databasemanage/models/user.js')
+const bodyparser = require('bodyparser')
+
+app.set('views', 'views', path.join(__dirname, 'public'));
 app.set('view engine', 'pug')
 
 
@@ -12,11 +17,12 @@ app.get('/', function(req, res){
 
 app.listen(5000, function(err){
     if (!err){
-      console.log("things are working!");
+      console.log("server is now running on port 5000");
     }else{
       console.log(err);
     }
-}
+})
+
 app.listen(5000, function () {
       console.log("Listening on port " + this.address().port)
 })

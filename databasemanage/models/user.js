@@ -18,6 +18,7 @@ const User = sequelize.define("user", {
   password: {type: Sequelize.STRING},
   createdAt: Sequelize.DATE,
   updatedAt: Sequelize.DATE,
-  money:{type:Sequelize.INTEGER}
+  money:{type:Sequelize.INTEGER},
+  pet: {type: Sequelize.INTEGER}
 })
 module.exports = User;
