@@ -47,7 +47,7 @@ function randNumber(){
 coins =0;
 function earningMoney(amt){
     coins+=amt
-    console.log(coins)
+    return coins;
 }
 
 const textNodes = [
@@ -107,11 +107,13 @@ const textNodes = [
       {
         text: 'Walk closer towards the ocean.',
         requiredState:(currentState) => currentState.brave, 
+        setState: { brave: true},
         nextText: 10
       },
       {
         text: 'Walk away from the ocean towards the town',
         requiredState:(currentState) => currentState.brave, 
+        setState: { brave: true},
         nextText: 11
       },
       {
@@ -138,7 +140,7 @@ const textNodes = [
   {
     id: 5,
     text: 'You have died honorably in battle. You have earned 10 coins.',
-    bank= earningMoney(10),
+    bank: earningMoney(10),
     options: [
         {
             text: 'End Game',
@@ -153,14 +155,16 @@ const textNodes = [
   {
     id: 6,
     text: 'You pull out a sword and charge at the troll. You succeed in slaying it. You are rewarded 10 coins.',
-    bank= earningMoney(10),
+    bank: earningMoney(10),
     options: [
       {
         text: 'Accept the coins and continue on your way.',
+        setState: { brave: true},
         nextText: 12
       },
       {
         text: 'Go home with what coins you have earned.',
+        setState: { brave: false},
         nextText: 13
       }
     ]
@@ -168,14 +172,16 @@ const textNodes = [
   {
     id: 7,
     text: 'You manage to distract the troll, but are injured in the process. You are rewarded 5 coins.',
-    bank= earningMoney(5),
+    bank: earningMoney(5),
     options: [
       {
         text: 'Accept the coins and continue on your way.',
+        setState: { brave: true},
         nextText: 12
       },
       {
         text: 'Go home with what coins you have earned.',
+        setState: { brave: false},
         nextText: 13
       },
     ]
@@ -183,14 +189,16 @@ const textNodes = [
   {
     id: 8,
     text: 'You succeed in reasoning with the troll. He shakes your hand and gives you 15 coins for a scintillating conversation.',
-    bank= earningMoney(15),
+    bank: earningMoney(15),
     options: [
         {
             text: 'Accept the coins and continue on your way.',
+            setState: { brave: true},
             nextText: 12
           },
           {
             text: 'Go home with what coins you have earned.',
+            setState: { brave: false},
             nextText: 13
           },
     ]
@@ -198,7 +206,7 @@ const textNodes = [
   {
     id: 9,
     text: 'The troll does not agree with your company and decided to eat you. You die instantly but earn 5 coins.',
-    bank= earningMoney(15),
+    bank: earningMoney(15),
     options: [
         {
             text: 'End Game',
@@ -216,6 +224,7 @@ const textNodes = [
     options: [
       {
         text: 'Stay to fight the Unagi',
+        setState: { brave: true},
         nextText: (function(num){
             if(num ==0){return 14;} 
             else if (num==1){return 5;} 
@@ -223,6 +232,7 @@ const textNodes = [
       },
       {
         text: 'Run away from the water towards the town.',
+        setState: { brave: false},
         nextText: 11
       },
       {
@@ -238,6 +248,7 @@ const textNodes = [
     options: [
         {
             text: 'You agree.',
+            setState: { brave: true},
             nextText: (function(num){
                 if(num ==0){return 14;} 
                 else if (num==1){return 5;} 
@@ -245,6 +256,7 @@ const textNodes = [
         },
         {
             text: 'You refuse and are chased out of town. You are then caught in a tsunami and die.',
+            setState: { brave: false},
             nextText: 18
         }
 
@@ -256,10 +268,12 @@ const textNodes = [
     options: [
        {
         text: 'Open it.',
+        setState: { brave: true},
         nextText: 15
       },
       {
         text: 'Leave it alone and continue on.',
+        setState: { brave: false},
         nextText: 16
       }
     ]
@@ -281,14 +295,16 @@ const textNodes = [
   {
     id: 14,
     text: 'You defeat the Unagi and the locals, who had been terrorized by the Unagi for years, thank you with 20 coins.',
-    bank= earningMoney(20),
+    bank: earningMoney(20),
     options: [
         {
             text: 'Accept the coins and continue on your way.',
+            setState: { brave: true},
             nextText: 12
           },
           {
             text: 'Go home with what coins you have earned.',
+            setState: { brave: false},
             nextText: 13
           },
     ]
@@ -296,7 +312,7 @@ const textNodes = [
   {
     id: 15,
     text: 'The box contains lost Aztec gold. You get 40 coins. Your adventure has come to a close',
-    bank= earningMoney(20),
+    bank: earningMoney(20),
     options: [
         {
             text: 'Finish Adventure.',
@@ -317,7 +333,7 @@ const textNodes = [
   {
     id: 17,
     text: 'Congratulations on completing all the challenges in your path. Here are 10 bonus coins.',
-    bank= earningMoney(10),
+    bank: earningMoney(10),
   },
   {
     id: 18,
