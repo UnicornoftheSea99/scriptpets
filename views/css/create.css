@@ -1,7 +1,7 @@
+/* ELEMENTS */
 img {
 	border-radius: 1.2rem;
 }
-
 h5 {
 	font-weight: bold;
 	margin-top: 1.5rem;
@@ -15,22 +15,31 @@ p {
 	padding: 1.2rem 0;
 }
 
+/* CONTAINERS */
 .container {
 	width: 700px;
 }
 .container-choices {
 	margin: 2rem 0;
 }
-.col-4 {
-	opacity: 0.7;
-	transition: opacity 0.4s;
-}
-.col-4:hover {
-	opacity: 1;
+
+/* INPUT */
+label:hover {
 	cursor: pointer;
 }
-
-.btn-choices {
+/* species */
+.species-label {
+	opacity: 0.4;
+	transition: opacity 0.4s;
+}
+.species-label:hover {
+	opacity: 1;
+}
+input[name=species]:checked + label {
+	opacity: 1;
+}
+/* personality */
+.personality-label {
    background-color:  rgb(41, 43, 44, 0);
    border-color: rgb(41, 43, 44, 0.9);
    margin: 0.5rem 0;
@@ -39,13 +48,16 @@ p {
    color: rgb(41, 43, 44, 0.9);
    text-transform: uppercase;
 }
-
-.btn-choices:hover {
+.personality-label:hover {
 	color: white;
     background-color: rgb(41, 43, 44, 0.9);
 }
-
-input {
+input[name=personality]:checked + label {
+	color: white;
+    background-color: rgb(41, 43, 44, 0.9);
+}
+/* name */
+input[type=text] {
 	border: 1px solid #ccc;
 	border-radius: 0.2rem;
 	margin: 1.1rem 0;
@@ -53,6 +65,7 @@ input {
 	width: 100%;
 }
 
+/* BUTTON */
 .btn-dark {
 	width: 100%;
     padding: 1.5rem 2rem;

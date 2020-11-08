@@ -43,74 +43,117 @@
 		<div class="row justify-content-center">
 			<h2>Create a Pet</h2>
 		</div>
-		<form>
+		
+		<form action="../create.php" method="post">
 			<div class="row justify-content-center">
 				<h5>Species</h5>
 			</div>
-			<div class="container-choices">
-				<div class="row justify-content-center">
-					<div class="col-4">
-						<!-- <img class="img-fluid shadow animate" src="imgs/fireferret.jpg"> -->
-						<input type="image" src="imgs/fireferret.jpg">
-						<p>Fire Ferret</p>
+			
+			<!-- SPECIES FIELD -->
+			<fieldset>
+				<div class="container-choices">
+					<div class="row justify-content-center">
+
+						<div class="col-4">
+					    <input type="radio" name="species" id="fireferret" value="fireferret" class="sr-only">		
+					    <label for="fireferret" class="species-label">
+							<img class="img-fluid shadow animate" src="imgs/fireferret.jpg">
+							<p>Fire Ferret</p>
+						</label>
+						</div>
+						
+						<div class="col-4">
+					    <input type="radio" name="species" id="flyingbison" value="flyingbison" class="sr-only">
+					    <label for="flyingbison" class="species-label">
+							<img class="img-fluid shadow animate" src="imgs/flyingbison.jpg">
+							<p>Flying Bison</p>
+						</label>
+						</div>
+						
+						<div class="col-4">
+					    <input type="radio" name="species" id="koalasheep" value="koalasheep" class="sr-only">
+					    <label for="koalasheep" class="species-label">
+							<img class="img-fluid shadow animate" src="imgs/koalasheep.jpg">
+							<p>Koala Sheep</p>
+						</label>
+						</div>
+						
 					</div>
-					<div class="col-4">
-						<!-- <img class="img-fluid shadow animate" src="imgs/flyingbison.jpg"> -->
-						<input type="image" src="imgs/flyingbison.jpg">
-						<p>Flying Bison</p>
-					</div>
-					<div class="col-4">
-						<!-- <img class="img-fluid shadow animate" src="imgs/koalasheep.jpg"> -->
-						<input type="image" src="imgs/koalasheep.jpg">
-						<p>Koala Sheep</p>
-					</div>
+					<div class="row justify-content-center">
+						
+						<div class="col-4">
+					    <input type="radio" name="species" id="mooselion" value="mooselion" class="sr-only">
+					    <label for="mooselion" class="species-label">
+							<img class="img-fluid shadow animate" src="imgs/mooselion.jpg">
+							<p>Moose Lion</p>
+						</label>
+						</div>
+						
+						<div class="col-4">
+					    <input type="radio" name="species" id="turtleduck" value="turtleduck" class="sr-only">
+					    <label for="turtleduck" class="species-label">
+							<img class="img-fluid shadow animate" src="imgs/turtleduck.jpg">
+							<p>Turtle Duck</p>
+						</label>
+						</div>
+						
+					</div>			
 				</div>
-				<div class="row justify-content-center">
-					<div class="col-4">
-						<!-- <img class="img-fluid shadow animate" src="imgs/mooselion.jpg"> -->
-						<input type="image" src="imgs/mooselion.jpg">
-						<p>Moose Lion</p>
-					</div>
-					<div class="col-4">
-						<!-- <img class="img-fluid shadow animate" src="imgs/turtleduck.jpg"> -->
-						<input type="image" src="imgs/turtleduck.jpg">
-						<p>Turtle Duck</p>
-					</div>
-				</div>			
-			</div>
+			</fieldset>
+			
+			<!-- PERSONALITY FIELD -->
 			<div class="row justify-content-center">
 				<h5>Personality</h5>
 			</div>
-			<div class="container-choices">
-				<div class="row justify-content-center">
-					<div class="col-3">
-						<!-- <button class="btn btn-choices">Cranky</button> -->
-						<input type="button" value="Cranky">
-					</div>
-					<div class="col-3">
-						<!-- <button class="btn btn-choices">Smart</button> -->
-						<input type="button" value="Smart">
-					</div>
-					<div class="col-3">
-						<!-- <button class="btn btn-choices">Quiet</button> -->
-						<input type="button" value="Quiet">
-					</div>
-					<div class="col-3">
-						<!-- <button class="btn btn-choices">Playful</button> -->
-						<input type="button" value="Playful">
+			<fieldset>
+				<div class="container-choices">
+					<div class="row justify-content-center">
+						
+						<div class="col-3">
+					    <input type="radio" name="personality" id="cranky" value="cranky" class="sr-only">
+					    <label for="cranky" class="btn personality-label">
+							Cranky
+						</label>
+						</div>
+						
+						<div class="col-3">
+					    <input type="radio" name="personality" id="smart" value="smart" class="sr-only">
+					    <label for="smart" class="btn personality-label">
+							Smart
+						</label>
+						</div>
+						
+						<div class="col-3">
+					    <input type="radio" name="personality" id="quiet" value="quiet" class="sr-only">
+					    <label for="quiet" class="btn personality-label">
+							Quiet
+						</label>
+						</div>
+						
+						<div class="col-3">
+					    <input type="radio" name="personality" id="playful" value="playful" class="sr-only">
+					    <label for="playful" class="btn personality-label">
+							Playful
+						</label>
+						</div>
+						
 					</div>
 				</div>
-			</div>
+			</fieldset>
+			
+			<!-- NAME FIELD -->
 			<div class="row justify-content-center">
 				<h5>Name</h5>
 			</div>
 			<div class="container-choices">
 				<div class="row justify-content-center">
-					<input type="text" placeholder="Name">
+					<input type="text" name="name" placeholder="Name">
 				</div>
 			</div>
+			
+			<!-- SUBMIT -->
+			<input type="submit" id="submit" class="btn btn-dark" value="Create">
 		</form>
-		<button id="submit" class="btn btn-dark">Create</button>
 	</div>
 	
 		
