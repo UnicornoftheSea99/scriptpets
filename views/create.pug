@@ -1,0 +1,99 @@
+doctype html
+head
+  title Script Pets
+  // meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  // bootstrap css
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2' crossorigin='anonymous')
+  // my css
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='stylesheet' href='css/create.css')
+  script(src='https://kit.fontawesome.com/4cb3e5d9fa.js' crossorigin='anonymous')
+  script(defer='' src='../adventure.js')
+// navbar
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  a.navbar-brand(href='#home') Script Pets
+  button.custom-toggler.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    .navbar-nav.mr-auto
+      a.nav-link(href='profile.html') Profile
+      a.nav-link(href='adventure.html') Adventure
+    .navbar-nav.ml-auto
+      a.nav-link(href='login.html') Log In
+      a.nav-link.active(href='register.html') Register
+// content
+.container
+  .row.justify-content-center
+    h2 Create a Pet
+  form(action='/create' method='post')
+    .row.justify-content-center
+      h5 Species
+    // SPECIES FIELD
+    fieldset
+      .container-choices
+        .row.justify-content-center
+          .col-4
+            input#fireferret.sr-only(type='radio' name='species' value='fireferret')
+            label.species-label(for='fireferret')
+              img.img-fluid.shadow.animate(src='imgs/fireferret.jpg')
+              p Fire Ferret
+          .col-4
+            input#flyingbison.sr-only(type='radio' name='species' value='flyingbison')
+            label.species-label(for='flyingbison')
+              img.img-fluid.shadow.animate(src='imgs/flyingbison.jpg')
+              p Flying Bison
+          .col-4
+            input#koalasheep.sr-only(type='radio' name='species' value='koalasheep')
+            label.species-label(for='koalasheep')
+              img.img-fluid.shadow.animate(src='imgs/koalasheep.jpg')
+              p Koala Sheep
+        .row.justify-content-center
+          .col-4
+            input#mooselion.sr-only(type='radio' name='species' value='mooselion')
+            label.species-label(for='mooselion')
+              img.img-fluid.shadow.animate(src='imgs/mooselion.jpg')
+              p Moose Lion
+          .col-4
+            input#turtleduck.sr-only(type='radio' name='species' value='turtleduck')
+            label.species-label(for='turtleduck')
+              img.img-fluid.shadow.animate(src='imgs/turtleduck.jpg')
+              p Turtle Duck
+    // PERSONALITY FIELD
+    .row.justify-content-center
+      h5 Personality
+    fieldset
+      .container-choices
+        .row.justify-content-center
+          form(action='/create', method='POST')
+          .col-3
+            input#cranky.sr-only(type='radio' name='personality' value='cranky')
+            label.btn.personality-label(for='cranky')
+              | Cranky
+          .col-3
+            input#smart.sr-only(type='radio' name='personality' value='smart')
+            label.btn.personality-label(for='smart')
+              | Smart
+          .col-3
+            input#quiet.sr-only(type='radio' name='personality' value='quiet')
+            label.btn.personality-label(for='quiet')
+              | Quiet
+          .col-3
+            input#playful.sr-only(type='radio' name='personality' value='playful')
+            label.btn.personality-label(for='playful')
+              | Playful
+            // NAME FIELD
+            .row.justify-content-center
+              h5 Name
+            .container-choices
+              .row.justify-content-center
+                input(type='text' name='name' placeholder='Name')
+            // SUBMIT
+            input#submit.btn.btn-dark(type='submit' value='Create')
+// scripts
+.scripts
+  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49' crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous')

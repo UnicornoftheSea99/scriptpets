@@ -3,9 +3,9 @@
 
 var Sequelize = require('sequelize-cockroachdb');
 var fs = require('fs');
-var sequelize = require('./models/databaseconnection.js')
-var Pet = require("./models/pet.js")
-var User = require("./models/user.js")
+var sequelize = require('./databaseconnection.js')
+var Pet = require("./pet.js")
+var User = require("./user.js")
 function syncTables(){
   User.sync({
           force: true

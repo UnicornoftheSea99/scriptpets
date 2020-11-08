@@ -4,18 +4,18 @@ module.exports = function(app, passport) {
 
     app.get('/register', authController.register);
     app.get('/login', authController.login);
-    app.post('/register', passport.authenticate('local-register', {
-      successRedirect: '/profile',
-      failureRedirect: '/register'
-    }))
+    app.post('/register', passport.authenticate('local-register',{
+            successRedirect: '/create',
+            failureRedirect: '/registererror'
+            }
+          ));
 
-    // app.post("/register", (req, res, next) => {
-    //   console.log("Hello, World!")
-    //   passport.authenticate('local-login', {
-    //     successRedirect: '/profile',
-    //     failureRedirect: '/register'
-    //   })
-    // })
+
+    app.get('/registererror', function(req,res) {
+        console.log(":(");
+        res.redirect('/register');
+    });
+
 
     app.get('/profile', isLoggedIn, authController.profile);
 
@@ -24,4 +24,9 @@ module.exports = function(app, passport) {
             return next();
         res.redirect('/login');
     }
+    app.post('/login', passport.authenticate('local-login', {
+        successRedirect: '/adventure',
+        failureRedirect: '/login'
+      }
+    ));
 }

@@ -1,0 +1,27 @@
+.container-stats {
+	padding: 2rem;
+}
+img {
+	border-radius: 50%;
+}
+.row {
+	padding: 1rem;
+}
+.col-2 {
+	text-align: center;
+}
+.btn-interaction {
+	width:100%;
+	padding: 1.5rem;
+}
+h6 {
+	padding: .2rem 0;
+	border-bottom: .1rem solid #f1f1f1;
+	font-weight: bold;
+}
+@media (max-width: 575.98px) {
+	.col-2 {
+		display: block;
+	}
+
+}

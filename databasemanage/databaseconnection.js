@@ -1,5 +1,6 @@
 var Sequelize = require('sequelize-cockroachdb');
 var fs = require('fs');
+const path = require('path');
 
 var sequelize = new Sequelize('scriptpets', 'maxroach', 'PasswordMans',{
   host:'script-pets-649.gcp-us-west2.cockroachlabs.cloud',
@@ -8,7 +9,7 @@ var sequelize = new Sequelize('scriptpets', 'maxroach', 'PasswordMans',{
   logging: console.log,
   dialectOptions: {
     ssl: {
-               cert: fs.readFileSync('./databasemanage/certs/script-pets-ca.crt')
+               cert: fs.readFileSync(path.join(__dirname, './certs/script-pets-ca.crt'))
                    .toString()
            }
       }

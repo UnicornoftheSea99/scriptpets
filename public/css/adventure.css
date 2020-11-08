@@ -1,0 +1,40 @@
+.col-9 {
+	padding: 3rem;
+}
+
+p {
+	margin: 2rem 0;
+}
+
+.btn-container {
+	margin: 1.5rem 0;
+}
+
+.btn {
+   background-color:  rgb(41, 43, 44, 0);
+   border-color: rgb(41, 43, 44, 0.9);
+   margin: 0.5rem 0;
+   width: 100%;
+   padding: 1.5rem 2rem;
+   color: rgb(41, 43, 44, 0.9);
+}
+
+.btn:hover {
+	color: white;
+    background-color: rgb(41, 43, 44, 0.9);
+	
+}
+
+.container {
+	padding: 2rem 0;
+}
+
+.fas {
+	padding: 0 1rem 0 0;
+}
+
+@media (max-width: 991.98px) { 
+	.card {
+		display: block;
+	}
+}

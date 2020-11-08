@@ -1,0 +1,73 @@
+/* ELEMENTS */
+img {
+	border-radius: 1.2rem;
+}
+h5 {
+	font-weight: bold;
+	margin-top: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+p {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	padding: 1.2rem 0;
+}
+
+/* CONTAINERS */
+.container {
+	width: 700px;
+}
+.container-choices {
+	margin: 2rem 0;
+}
+
+/* INPUT */
+label:hover {
+	cursor: pointer;
+}
+/* species */
+.species-label {
+	opacity: 0.4;
+	transition: opacity 0.4s;
+}
+.species-label:hover {
+	opacity: 1;
+}
+input[name=species]:checked + label {
+	opacity: 1;
+}
+/* personality */
+.personality-label {
+   background-color:  rgb(41, 43, 44, 0);
+   border-color: rgb(41, 43, 44, 0.9);
+   margin: 0.5rem 0;
+   width: 100%;
+   padding: 1.5rem 2rem;
+   color: rgb(41, 43, 44, 0.9);
+   text-transform: uppercase;
+}
+.personality-label:hover {
+	color: white;
+    background-color: rgb(41, 43, 44, 0.9);
+}
+input[name=personality]:checked + label {
+	color: white;
+    background-color: rgb(41, 43, 44, 0.9);
+}
+/* name */
+input[type=text] {
+	border: 1px solid #ccc;
+	border-radius: 0.2rem;
+	margin: 1.1rem 0;
+	padding: 1.2rem;
+	width: 100%;
+}
+
+/* BUTTON */
+.btn-dark {
+	width: 100%;
+    padding: 1.5rem 2rem;
+	margin: 1.5rem 0;
+}
