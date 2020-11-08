@@ -44,20 +44,11 @@ function randNumber(){
     return result; 
 }
 
-// class Item {
-//     constructor(nam, stat) {
-//         this.name = nam;
-//         this.state = stat;
-//     }
-// };
-
-// class trunk extends Item {
-//     constructor(name, money, toys) {
-//         super(name, stt);
-//         this.money = money;
-//         this.toys=toys;
-//     }
-// };
+coins =0;
+function earningMoney(amt){
+    coins+=amt
+    console.log(coins)
+}
 
 const textNodes = [
   {
@@ -87,7 +78,6 @@ const textNodes = [
       {
         text: 'Fight the troll',
         requiredState:(currentState) => currentState.brave, 
-        //requiredState: (currentState) => currentState.blueGoo,
         setState: { brave: true},
         nextText: (function(num){
             if(num ==0){return 5;} 
@@ -96,8 +86,8 @@ const textNodes = [
       },
       {
         text: 'Try to reason with the troll',
-        //requiredState: (currentState) => currentState.blueGoo,
-        //setState: { blueGoo: false, shield: true },
+        requiredState:(currentState) => currentState.brave, 
+        setState: { brave: true},
         nextText: (function(num){
             if(num ==0){return 5;} 
             else if (num==1){return 8;} 
@@ -105,6 +95,7 @@ const textNodes = [
       },
       {
         text: 'Run away back home',
+        setState: { brave: false},
         nextText: 4
       }
     ]
@@ -115,21 +106,24 @@ const textNodes = [
     options: [
       {
         text: 'Walk closer towards the ocean.',
-        nextText: 4
+        requiredState:(currentState) => currentState.brave, 
+        nextText: 10
       },
       {
-        text: 'Walk towards the town',
-        nextText: 5
+        text: 'Walk away from the ocean towards the town',
+        requiredState:(currentState) => currentState.brave, 
+        nextText: 11
       },
       {
         text: 'Turn around and go home',
+        setState: { brave: false},
         nextText: 4
       }
     ]
   },
   {
     id: 4,
-    text: 'You have run home scared and so will go home penniless.',
+    text: 'You have run home scared and so will return penniless.',
     options: [
       {
         text: 'Restart',
@@ -140,6 +134,7 @@ const textNodes = [
   {
     id: 5,
     text: 'You have died honorably in battle. You have earned +10 coins.',
+    bank= earningMoney(10),
     options: [
       {
         text: 'Restart',
@@ -147,41 +142,36 @@ const textNodes = [
       }
     ]
   },
-//   {
-//     id: 6,
-//     text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
-//     options: [
-//       {
-//         text: 'Explore the castle',
-//         nextText: 7
-//       }
-//     ]
-//   },
-//   {
-//     id: 7,
-//     text: 'While exploring the castle you come across a horrible monster in your path.',
-//     options: [
-//       {
-//         text: 'Try to run',
-//         nextText: 8
-//       },
-//       {
-//         text: 'Attack it with your sword',
-//         requiredState: (currentState) => currentState.sword,
-//         nextText: 9
-//       },
-//       {
-//         text: 'Hide behind your shield',
-//         requiredState: (currentState) => currentState.shield,
-//         nextText: 10
-//       },
-//       {
-//         text: 'Throw the blue goo at it',
-//         requiredState: (currentState) => currentState.blueGoo,
-//         nextText: 11
-//       }
-//     ]
-//   },
+  {
+    id: 6,
+    text: 'You pull out a sword and charge at the troll. You succeed in slaying it. You are rewarded 10 coins.',
+    bank= earningMoney(15),
+    options: [
+      {
+        text: 'Accept the coins and continue on your way.',
+        nextText: 12
+      },
+      {
+        text: 'Go home with what coins you have earned.',
+        nextText: 13
+      }
+    ]
+  },
+  {
+    id: 7,
+    text: 'You manage to distract the troll, but are injured in the process. You are rewarded 5 coins.',
+    options: [
+      {
+        text: 'Accept the coins and continue on your way.',
+        bank= earningMoney(5),
+        nextText: 12
+      },
+      {
+        text: 'Go home with what coins you have earned.',
+        nextText: 13
+      },
+    ]
+  },
 //   {
 //     id: 8,
 //     text: 'Your attempts to run are in vain and the monster easily catches.',
